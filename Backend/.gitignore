@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+venv/
+env/
+.venv/
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coqui TTS models (optional - if downloading large model files)
+tts_models/
+checkpoints/
+downloads/
+
+# VS Code
+.vscode/
+
+# FastAPI specific
+*.db
+*.sqlite
+
+# Audio files (optional)
+*.wav
+*.mp3
+output_audio/
+
+# PyCharm
+.idea/
+
+Voutputs
+Vuploads

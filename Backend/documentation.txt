@@ -1,0 +1,98 @@
+VocalAI/
+├── backend/
+│   ├── main.py                # FastAPI app entry
+│   ├── api/                   # API routes
+│   ├── services/              # Core ML logic (Resemblyzer/TTS/Vocoder)
+│   ├── models/                # Pretrained models
+│   ├── utils/                 # Helper functions
+│   └── requirements.txt       # Python dependencies
+├── frontend/                  # React app (built later)
+└── README.md
+
+
+
+fastapi
+uvicorn[standard]
+resemblyzer
+numpy
+
+
+How to clean unused dependencies?
+Remove from requirements.txt:
+
+bash
+Copy
+Edit
+pip uninstall resemblyzer
+pip freeze > requirements.txt
+This reduces build time and final image size.
+
+
+🔜 So If You Want To Add That Feature Later:
+✅ You can add Resemblyzer later alongside Coqui.
+
+🎯 Just isolate it into a voice_classifier.py service module.
+
+🧹 Keep it separate from generation logic.
+
+Would you like me to:
+
+Show a simple speaker recognition API route?
+
+Compare multiple voices and cluster them?
+
+
+1 Make sure you're using Python 3.10 (not 3.13).
+
+In terminal, verify it:
+
+bash
+Copy
+Edit
+python --version
+
+
+🚀 2. Activate Your Virtual Environment
+Navigate to your project folder where the venv exists:
+
+bash
+Copy
+Edit
+cd path\to\your\project
+Then activate the virtual environment:
+
+Windows:
+
+bash
+Copy
+Edit
+venv\Scripts\activate
+
+📦 3. Check if All Dependencies Are Present
+Optionally run:
+
+bash
+Copy
+Edit
+pip list
+To confirm packages like TTS, fastapi, etc., are still installed.
+
+If any are missing:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+
+ 4. Remember to Always Work Inside the Virtual Environment
+Any script or FastAPI server (uvicorn main:app --reload) should be run after activating the venv, or packages won't be found.
+
+Optional: Make It Foolproof
+🧾 Save dependencies:
+
+bash
+Copy
+Edit
+pip freeze > requirements.txt
+🛠 Add a README or .bat / .sh script to auto-activate venv if you're working solo
+
