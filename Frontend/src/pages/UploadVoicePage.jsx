@@ -67,7 +67,7 @@ function UploadVoicePage() {
           <label className="block mb-1 font-medium">Upload WAV File</label>
           <input
             type="file"
-            accept=".wav"
+            accept=".wav,.mp3,.flac"
             onChange={(e) => setFile(e.target.files[0])}
             className="w-full"
           />
