@@ -20,9 +20,9 @@ numpy
 How to clean unused dependencies?
 Remove from requirements.txt:
 
-bash
-Copy
-Edit
+
+
+
 pip uninstall resemblyzer
 pip freeze > requirements.txt
 This reduces build time and final image size.
@@ -35,54 +35,52 @@ This reduces build time and final image size.
 
 🧹 Keep it separate from generation logic.
 
-Would you like me to:
 
-Show a simple speaker recognition API route?
-
-Compare multiple voices and cluster them?
 
 
 1 Make sure you're using Python 3.10 (not 3.13).
 
 In terminal, verify it:
-
-bash
-Copy
-Edit
 python --version
+
+else : py -3.10 -m venv venv
+
 
 
 🚀 2. Activate Your Virtual Environment
 Navigate to your project folder where the venv exists:
 
-bash
-Copy
-Edit
+
+
+
 cd path\to\your\project
 Then activate the virtual environment:
 
 Windows:
 
-bash
-Copy
-Edit
+
+
+
 venv\Scripts\activate
 
 📦 3. Check if All Dependencies Are Present
 Optionally run:
 
-bash
-Copy
-Edit
+
+
+
 pip list
 To confirm packages like TTS, fastapi, etc., are still installed.
 
 If any are missing:
 
-bash
-Copy
-Edit
+
+
+
 pip install -r requirements.txt
+
+uvicorn main:app --reload
+
 
  4. Remember to Always Work Inside the Virtual Environment
 Any script or FastAPI server (uvicorn main:app --reload) should be run after activating the venv, or packages won't be found.
@@ -90,9 +88,9 @@ Any script or FastAPI server (uvicorn main:app --reload) should be run after act
 Optional: Make It Foolproof
 🧾 Save dependencies:
 
-bash
-Copy
-Edit
+
+
+
 pip freeze > requirements.txt
 🛠 Add a README or .bat / .sh script to auto-activate venv if you're working solo
 
@@ -110,8 +108,8 @@ Is deployable on the web or mobile
 
 🧩 1. Core Architecture Overview
 pgsql
-Copy
-Edit
+
+
 [User Input]
     ↓
 [Speech Recognition (STT)] → Text
@@ -152,8 +150,8 @@ Options:
 If you're building a chatbot-style assistant, use:
 
 python
-Copy
-Edit
+
+
 prompt = f"तुम एक सहायक हो। उपयोगकर्ता ने कहा: {text}। उपयुक्त उत्तर दो।"
 response = openai.ChatCompletion.create( ... )
 🔊 5. Text-to-Speech (TTS)
@@ -194,8 +192,8 @@ Use Indian names, phrases, tone
 
 🧱 Example Architecture (Hindi-First Assistant)
 txt
-Copy
-Edit
+
+
 [Frontend: React + Mic Input]
        |
 [FastAPI]
